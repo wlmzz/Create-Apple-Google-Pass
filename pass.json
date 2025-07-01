@@ -1,0 +1,32 @@
+{
+  "formatVersion": 1,
+  "passTypeIdentifier": "pass.com.example.loyalty",
+  "serialNumber": "123456",
+  "teamIdentifier": "ABCD1234",
+  "organizationName": "La Mia Azienda",
+  "description": "Carta fedelt\u00e0",
+  "logoText": "Mia Loyalty",
+  "foregroundColor": "rgb(255,255,255)",
+  "backgroundColor": "rgb(0,0,0)",
+  "generic": {
+    "primaryFields": [
+      {
+        "key": "points",
+        "label": "Punti",
+        "value": "35"
+      }
+    ],
+    "auxiliaryFields": [
+      {
+        "key": "member",
+        "label": "ID Membro",
+        "value": "987654"
+      }
+    ]
+  },
+  "barcode": {
+    "format": "PKBarcodeFormatQR",
+    "message": "987654",
+    "messageEncoding": "iso-8859-1"
+  }
+}

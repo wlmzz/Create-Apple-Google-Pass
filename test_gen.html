@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Wallet Card Creator</title>
+    <style>
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 20px;
+            background: #0070ba;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registrati per ottenere la tua card Wallet</h2>
+    <input type="email" id="email" placeholder="Inserisci la tua email" />
+    <button onclick="createWalletCard()">Registrati e crea card</button>
+
+    <div id="wallet-links" style="display:none; margin-top:20px;">
+        <a id="apple-btn" class="button">Aggiungi a Apple Wallet</a>
+        <a id="google-btn" class="button">Aggiungi a Google Wallet</a>
+    </div>
+
+    <script>
+    async function createWalletCard() {
+        const email = document.getElementById('email').value;
+        if (!email) {
+            alert('Per favore inserisci una email');
+            return;
+        }
+        const res = await fetch('https://tuo-server.com/create_card', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+        });
+        const data = await res.json();
+        document.getElementById('apple-btn').href = data.apple_link;
+        document.getElementById('google-btn').href = data.google_link;
+        document.getElementById('wallet-links').style.display = 'block';
+    }
+    </script>
+</body>
+</html>
