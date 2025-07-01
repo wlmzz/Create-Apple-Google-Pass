@@ -1,5 +1,5 @@
 
-# 🛠 Wallet Integration - Guida completa (IT / EN)
+#  Wallet Integration - Guida completa (IT / EN)
 
 ---
 
@@ -23,7 +23,7 @@
 
 ---
 
-### 🔧 2. Configura il tuo progetto Python
+###  2. Configura il tuo progetto Python
 
 1. Inserisci i certificati nella cartella `certs`:
    ```
@@ -141,7 +141,7 @@ Put your certs in `certs/` and edit `create_pkpass.py` / `create_google_jwt.py` 
 - Server creates Apple Wallet pass and Google link, returns JSON.
 - Wix shows two buttons to let the user add the card to Wallet.
 
-#### ✅ QR with email
+####  QR with email
 Always encode user email in Apple `barcode.message` and Google `barcode.value`.
 
 ---
